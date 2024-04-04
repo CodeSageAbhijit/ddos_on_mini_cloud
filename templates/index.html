@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Transactions
+{% endblock %}
+
+{% block main %}
+<h2> WELCOME TO MINI CLOUD</h2>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 600px;
+        margin: 21px auto;
+        padding: 51px;
+        border: 5px solid #ccc;
+        border-radius: 5px;
+        text-align: center; /* Center the content */
+    }
+    h1 {
+        text-align: center;
+    }
+    .info {
+        margin-bottom: 10px;
+    }
+    .profile-img {
+        max-width: 150px; /* Adjust the size of the profile image as needed */
+        border-radius: 50%; /* Make the image round */
+        margin-top: -36px;
+        border: 2px solid #000;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <img class="profile-img" src="https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" alt="Stock Profile Photo">
+    <h1>User Account Information</h1>
+    <div class="info">
+        <strong>Account ID:</strong> <span>{{ user_id }}</span>
+    </div>
+    <div class="info">
+        <strong>Username:</strong> <span>{{ username }}</span>
+    </div>
+    <div class="info">
+        <strong>Number of Files Uploaded:</strong> <span>{{ num_files }}</span>
+    </div>
+
+</div>
+</body>
+{% endblock %}
