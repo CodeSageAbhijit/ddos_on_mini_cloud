@@ -35,19 +35,30 @@ Transactions
 </style>
 </head>
 <body>
-<div class="container">
-    <img class="profile-img" src="https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" alt="Stock Profile Photo">
-    <h1>User Account Information</h1>
-    <div class="info">
-        <strong>Account ID:</strong> <span>{{ user_id }}</span>
+    <div class="container">
+        <img class="profile-img" src="https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" alt="Stock Profile Photo">
+        <h1>User Account Information</h1>
+        <div class="info">
+            <strong>Account ID:</strong> <span>{{ user_id }}</span>
+        </div>
+        <div class="info">
+            <strong>Username:</strong> <span>{{ username }}</span>
+        </div>
+        <div class="info">
+            <strong>Number of Files Uploaded:</strong> <span>{{ num_files }}</span>
+        </div>
+    
+         <!-- Real-time DDoS Detection Info -->
+         <div class="ddos-info">
+            <h2>DDoS Detection Status</h2>
+            <div class="info">
+                <strong>Status:</strong> 
+                <span style="color: {% if ddos_status == 'Warning: DDoS Attack Detected' %} red {% else %} green {% endif %};">
+                    {{ ddos_status }}
+                </span>
+            </div>
+        </div>
+    
     </div>
-    <div class="info">
-        <strong>Username:</strong> <span>{{ username }}</span>
-    </div>
-    <div class="info">
-        <strong>Number of Files Uploaded:</strong> <span>{{ num_files }}</span>
-    </div>
-
-</div>
 </body>
 {% endblock %}
